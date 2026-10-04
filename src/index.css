@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+/*
+  Professional light theme.
+  The app was authored with a dark slate palette; the scale is inverted here so
+  every existing utility (bg-slate-900 = surface, text-slate-100 = primary text)
+  resolves to a clean light UI. Accent colours are darkened for legibility on white.
+*/
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+
+  --color-slate-950: #f5f7fa;
+  --color-slate-900: #ffffff;
+  --color-slate-800: #e6e9ee;
+  --color-slate-700: #d3d9e0;
+  --color-slate-600: #a3acb8;
+  --color-slate-500: #6b7685;
+  --color-slate-400: #566070;
+  --color-slate-300: #3d4653;
+  --color-slate-200: #28303b;
+  --color-slate-100: #111827;
+
+  /* brand blue (was cyan) */
+  --color-cyan-300: #1d4ed8;
+  --color-cyan-400: #2563eb;
+  --color-cyan-500: #2563eb;
+  --color-cyan-950: #eff6ff;
+
+  /* warning (was amber) */
+  --color-amber-200: #92400e;
+  --color-amber-300: #a8480a;
+  --color-amber-400: #b45309;
+  --color-amber-500: #d97706;
+  --color-amber-950: #fffbeb;
+
+  --color-emerald-300: #047857;
+  --color-emerald-400: #047857;
+  --color-emerald-500: #059669;
+  --color-emerald-950: #ecfdf5;
+
+  --color-rose-200: #991b1b;
+  --color-rose-300: #b91c1c;
+  --color-rose-400: #b91c1c;
+  --color-rose-500: #dc2626;
+  --color-rose-600: #b91c1c;
+  --color-rose-950: #fef2f2;
+
+  --color-orange-400: #c2410c;
+  --color-orange-500: #ea580c;
+  --color-purple-400: #6d28d9;
+  --color-purple-500: #7c3aed;
+}
+
+@layer base {
+  html { -webkit-font-smoothing: antialiased; }
+  body {
+    background-color: #f5f7fa;
+    color: #111827;
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+  /* calmer, flatter surfaces everywhere */
+  .rounded-xl { border-radius: 0.5rem; }
+  .rounded-lg { border-radius: 0.375rem; }
+  button { cursor: pointer; }
+  :focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }
+}
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #cbd2db; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #a3acb8; }
